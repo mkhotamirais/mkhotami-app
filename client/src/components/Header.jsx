@@ -26,7 +26,7 @@ export const Logo = () => {
   return (
     <a href="/" className="flex flex-col">
       <div className="text-xl font-medium">Mkhotami</div>
-      <div className="text-sm">Vercel</div>
+      <div className="text-sm">App</div>
     </a>
   );
 };
