@@ -1,5 +1,5 @@
 const allowedOrigins = [
-  "https://mkhotami-app.vercel.app/",
+  "https://mkhotami-app.vercel.app",
   "https://mkhotamirais.my.id",
   "https://mkhotamirais.github.io",
   "https://mkhotami.vercel.app",
@@ -27,6 +27,7 @@ const corsOptions = {
       return callback(new Error("Not allowed by CORS"));
     }
   },
+  credentials: true,
   optionsSuccessStatus: 200,
 };
 
