@@ -1,4 +1,5 @@
 const allowedOrigins = [
+  "https://mkhotami-app.vercel.app/",
   "https://mkhotamirais.my.id",
   "https://mkhotamirais.github.io",
   "https://mkhotami.vercel.app",
