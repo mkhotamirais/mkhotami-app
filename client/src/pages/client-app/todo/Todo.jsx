@@ -26,7 +26,7 @@ const todoMenus = [
   {
     text: "todo3",
     description:
-      "he third to-do list project uses the Redux library for state management, allowing for centralized data and easier access to each state, and the notifications are implemented using the react-hot-toast library",
+      "The third to-do list project uses the Redux library for state management, allowing for centralized data and easier access to each state, and the notifications are implemented using the react-hot-toast library",
     content: <Todo3 />,
   },
 ];
