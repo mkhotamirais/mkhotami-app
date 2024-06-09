@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { Bubble } from "../../../components/Components";
-import JsTheory from "./jsTheory/JsTheory";
+// import JsTheory from "./jsTheory/JsTheory";
 
 const jsMenus = [
   { href: "", text: "home" },
+  { href: "jsquestions", text: "questions" },
   { href: "jsbasic", text: "basic" },
   { href: "jsadvance", text: "advance" },
   { href: "jsmodule", text: "module" },
@@ -18,7 +19,7 @@ const Javascript = () => {
         <Bubble menus={jsMenus} />
         <div>Javascript</div>
       </div>
-      <JsTheory />
+      {/* <JsTheory /> */}
       <Outlet />
     </div>
   );

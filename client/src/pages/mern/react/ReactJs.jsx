@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Bubble } from "../../../components/Components";
 const reactjsMenus = [
   { href: "react-ringkasan", text: "ringkasan" },
+  { href: "react-questions", text: "questions" },
   { href: "usestate", text: "useState" },
   { href: "useeffect", text: "useEffect" },
   { href: "usecallback", text: "useCallback" },

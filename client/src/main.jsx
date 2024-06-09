@@ -92,6 +92,8 @@ import LibraryComponents from "./pages/home/libraryComponents/LibraryComponents.
 import TryNewComponent from "./pages/home/reactComponents/TryNewComponent.jsx";
 import CourseTechnical from "./pages/basic/course/CourseTechnical.jsx";
 import Umum from "./pages/basic/umum/Umum.jsx";
+import ReactQuestions from "./pages/mern/react/react-questions/ReactQuestions.jsx";
+import JsQuestions from "./pages/basic/javascript/jsQuestions/JsQuestions.jsx";
 
 store.dispatch(getUsers());
 store.dispatch(getPosts());
@@ -122,6 +124,7 @@ const router = createBrowserRouter(
         <Route path="javascript" element={<Javascript />}>
           <Route index element={<JsBasic />} />
           <Route path="jsbasic" element={<JsBasic />} />
+          <Route path="jsquestions" element={<JsQuestions />} />
           <Route path="jsadvance" element={<JsAdvance />} />
           <Route path="jsfunction" element={<JsFunctions />} />
           <Route path="jscases" element={<JsCases />} />
@@ -146,6 +149,7 @@ const router = createBrowserRouter(
         <Route path="reactjs" element={<ReactJs />}>
           <Route index element={<ReactRingkasan />} />
           <Route path="react-ringkasan" element={<ReactRingkasan />} />
+          <Route path="react-questions" element={<ReactQuestions />} />
           <Route path="usestate" element={<UseState />} />
           <Route path="useeffect" element={<UseEffect />} />
           <Route path="usecallback" element={<UseCallback />} />
