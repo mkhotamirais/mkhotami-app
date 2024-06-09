@@ -1,4 +1,4 @@
-import { Tabs } from "../../components/Components";
+import { Tabs, Title } from "../../components/Components";
 
 const simpleWebpageMenus = [
   { href: "../../staticweb/mrwd1/index.html", text: "mrwd1" },
@@ -13,7 +13,7 @@ const simpleWebpageMenus = [
 const SimpleWebpage = () => {
   return (
     <div>
-      <div>Simple Webpage</div>
+      <Title>Simple Webpage</Title>
       <Tabs menus={simpleWebpageMenus} />
     </div>
   );

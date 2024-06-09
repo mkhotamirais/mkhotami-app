@@ -7,6 +7,10 @@ const Todo2Add = () => {
   const { dispatch } = useContext(TodoContext);
   const addTodo = (e) => {
     e.preventDefault();
+    if (!text) {
+      enqueueSnackbar(`Text required`, { variant: "error" });
+      return;
+    }
     dispatch({ type: "added", text });
     setText("");
     enqueueSnackbar(`Add ${text} success`, { variant: "success" });

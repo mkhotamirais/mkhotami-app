@@ -25,8 +25,8 @@ const Todo3Add = () => {
         placeholder="add todo"
         className="border rounded focus:outline-cyan-300 w-full bg-inherit p-1"
       />
-      <button type="submit" className="border rounded px-2 bg-cyan-500 hover:opacity-70">
-        add
+      <button type="submit" className="border rounded px-2 bg-cyan-500 text-white hover:opacity-70">
+        Add
       </button>
     </form>
   );

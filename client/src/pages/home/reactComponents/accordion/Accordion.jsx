@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+import { Title } from "../../../../components/Components";
 
 const Content1 = () => <>one line</>;
 const Content2 = () => (
@@ -22,7 +23,7 @@ const data = [
 export const Accordion = () => {
   return (
     <section id="accordion">
-      <div>accordion</div>
+      <Title>accordion</Title>
       <div>Accordion Autoclose Scale Animate</div>
       {/* <AccAutocloseScale /> */}
       <p>gagal</p>

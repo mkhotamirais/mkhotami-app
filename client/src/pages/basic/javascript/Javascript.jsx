@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Bubble } from "../../../components/Components";
+import { Bubble, Title } from "../../../components/Components";
 // import JsTheory from "./jsTheory/JsTheory";
 
 const jsMenus = [
@@ -15,10 +15,10 @@ const jsMenus = [
 const Javascript = () => {
   return (
     <div>
-      <div className="flex gap-3 items-center">
+      <Title left>
         <Bubble menus={jsMenus} />
         <div>Javascript</div>
-      </div>
+      </Title>
       {/* <JsTheory /> */}
       <Outlet />
     </div>

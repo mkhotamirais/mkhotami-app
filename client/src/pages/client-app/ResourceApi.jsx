@@ -1,4 +1,5 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { Title } from "../../components/Components";
 
 const resourceApiList = [
   { href: "https://jsonplaceholder.typicode.com/", text: "jsonplaceholder" },
@@ -13,7 +14,7 @@ const resourceApiList = [
 const ResourceApi = () => {
   return (
     <div>
-      <div className="text-center text-lg my-3">Resource Api</div>
+      <Title>Resource Api</Title>
       <div className="flex justify-center gap-4 flex-wrap">
         {resourceApiList.map((item, i) => (
           <a

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Bubble } from "../../../components/Components";
+import { Bubble, Title } from "../../../components/Components";
 const reactjsMenus = [
   { href: "react-ringkasan", text: "ringkasan" },
   { href: "react-questions", text: "questions" },
@@ -16,10 +16,10 @@ const reactjsMenus = [
 const ReactJs = () => {
   return (
     <div>
-      <div className="flex gap-3 items-center">
+      <Title left>
         <Bubble menus={reactjsMenus} />
         <div>ReactJs</div>
-      </div>
+      </Title>
       <Outlet />
     </div>
   );

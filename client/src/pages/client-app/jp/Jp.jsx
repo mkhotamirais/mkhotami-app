@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Bubble } from "../../../components/Components";
+import { Bubble, Title } from "../../../components/Components";
 
 const jpMenus = [
   { href: "jpposts", text: "Posts" },
@@ -8,10 +8,10 @@ const jpMenus = [
 const Jp = () => {
   return (
     <div>
-      <div className="flex gap-3 items-center">
+      <Title left>
         <Bubble menus={jpMenus} />
         <div>Jsonplaceholder</div>
-      </div>
+      </Title>
       <Outlet />
     </div>
   );

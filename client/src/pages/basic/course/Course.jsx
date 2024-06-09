@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Bubble } from "../../../components/Components";
+import { Bubble, Title } from "../../../components/Components";
 
 const courseMenus = [
   { href: "tasks", text: "tasks" },
@@ -11,10 +11,10 @@ const courseMenus = [
 const Course = () => {
   return (
     <div>
-      <div className="flex items-center gap-3">
+      <Title left>
         <Bubble menus={courseMenus} />
         <div>Course</div>
-      </div>
+      </Title>
       <Outlet />
     </div>
   );

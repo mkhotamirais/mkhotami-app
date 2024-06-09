@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../../../app/client-app/omdbapiSlice";
-import { CardGrid, Err, Loading } from "../../../components/Components";
+import { CardGrid, Err, Loading, Title } from "../../../components/Components";
 import OmdbItems from "./OmdbItems";
 import { OmdbPlot, OmdbReset, OmdbSearch, OmdbType, OmdbY } from "./OmdbParam";
 
@@ -24,6 +24,7 @@ const Omdbapi = () => {
   }
   return (
     <div>
+      <Title>OmdbApi</Title>
       <div className="flex justify-between items-center mb-2">
         <OmdbSearch />
         <OmdbReset />

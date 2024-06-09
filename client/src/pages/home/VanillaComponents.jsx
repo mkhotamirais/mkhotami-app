@@ -1,4 +1,4 @@
-import { Tabs } from "../../components/Components";
+import { Tabs, Title } from "../../components/Components";
 
 const vanillaComponentsMenus = [
   { href: "../../vanilla-components/carousel/index.html", text: "carousel" },
@@ -8,7 +8,7 @@ const vanillaComponentsMenus = [
 const VanillaComponents = () => {
   return (
     <div>
-      <div>VanillaComponents</div>
+      <Title>VanillaComponents</Title>
       <Tabs menus={vanillaComponentsMenus} />
     </div>
   );

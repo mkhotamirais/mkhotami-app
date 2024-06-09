@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Todo1Add from "./Todo1Add";
 import Todo1Items from "./Todo1Items";
+import { Todo1ModalDelAll } from "./Todo1ModalDel";
 
 // const initialTodo = [
 //   { id: "1", text: "todo1", done: false },
@@ -14,6 +15,7 @@ const Todo1 = () => {
   const [msg, setMsg] = useState(null);
   const [isEdit, setIsEdit] = useState(false);
   const [checkedAll, setCheckedAll] = useState(false);
+  const [openModalDel, setOpenModalDel] = useState(false);
 
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("todo1")) || []);
@@ -74,6 +76,7 @@ const Todo1 = () => {
     if (result.length === 0) setMsg(`Ok: Success delete all data, total deleted ${data.length} data`);
     else setMsg(`Ok: Delete ${data.length - result.length} data success`);
     setResult(result);
+    setOpenModalDel(false);
   };
 
   const checkedAllData = () => {
@@ -100,12 +103,18 @@ const Todo1 = () => {
             </div>
             {checkedLength > 0 && (
               <button
-                onClick={deleteAllChecked}
+                onClick={() => setOpenModalDel(true)}
+                // onClick={deleteAllChecked}
                 className="delete border rounded p-2 leading-none bg-red-500 text-white hover:opacity-50 text-xs sm:text-sm"
               >
                 Delete All Checked
               </button>
             )}
+            <Todo1ModalDelAll
+              onClose={() => setOpenModalDel(false)}
+              openModalDel={openModalDel}
+              deleteAllChecked={deleteAllChecked}
+            />
           </div>
           <div className="flex flex-col gap-1">
             {data

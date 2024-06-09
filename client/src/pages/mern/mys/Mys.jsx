@@ -1,7 +1,9 @@
+import { Title } from "../../../components/Components";
+
 const Mys = () => {
   return (
     <div>
-      <div>Mysql</div>
+      <Title left>Mysql</Title>
       <ul className="list-inside list-disc">
         <li>
           Mysql adalah RDBMD yang digunaan secara luas, gratis, open source, cocok untuk aplikasi kecil maupun besar, lintas

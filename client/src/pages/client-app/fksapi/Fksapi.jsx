@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { CardGrid, Err, Loading } from "../../../components/Components";
+import { CardGrid, Err, Loading, Title } from "../../../components/Components";
 import FksapiItems from "./FksapiItems";
 
 const Fksapi = () => {
@@ -15,7 +15,7 @@ const Fksapi = () => {
 
   return (
     <div>
-      Fakestoreapi
+      <Title>FakestoreApi</Title>
       {content}
     </div>
   );

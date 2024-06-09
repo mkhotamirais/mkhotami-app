@@ -1,7 +1,9 @@
+import { Title } from "../../../components/Components";
+
 const Vcs = () => {
   return (
     <div>
-      <div>vcs</div>
+      <Title left>vcs</Title>
       <ul className="list-inside list-disc">
         <li>
           Git adalah salah satu VCS, oleh Linus Torvalds mengatur source code fleksibel, revisi, kolaborasi, sharing rekaman

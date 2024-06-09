@@ -1,7 +1,9 @@
+import { Title } from "../../../components/Components";
+
 const Mdb = () => {
   return (
     <div>
-      <div>Mongodb</div>
+      <Title left>Mongodb</Title>
       <div>Database</div>
       <ul className="list-inside list-disc">
         <li>

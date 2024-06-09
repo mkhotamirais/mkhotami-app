@@ -2,9 +2,14 @@ import { FaCheck, FaTrashAlt } from "react-icons/fa";
 import { FaPenToSquare, FaXmark } from "react-icons/fa6";
 import moment from "moment";
 import { useState } from "react";
+import { Todo1ModalDel } from "./Todo1ModalDel";
 
 const Todo1Items = ({ item, setMsg, deleteTodo, checkedId, isEdit, setIsEdit, editTodo }) => {
   const [newText, setNewText] = useState(item.text);
+  const [idModalDel, setIdModalDel] = useState(null);
+  const onClose = () => {
+    setIdModalDel(null);
+  };
 
   const onCancel = () => {
     setNewText(item.text);
@@ -47,9 +52,10 @@ const Todo1Items = ({ item, setMsg, deleteTodo, checkedId, isEdit, setIsEdit, ed
             <button onClick={() => setIsEdit(item.id)} className="text-green-500 hover:opacity-70">
               <FaPenToSquare />
             </button>
-            <button onClick={() => deleteTodo(item)} className="text-red-500 hover:opacity-70">
+            <button onClick={() => setIdModalDel(item.id)} className="text-red-500 hover:opacity-70">
               <FaTrashAlt />
             </button>
+            <Todo1ModalDel onClose={onClose} item={item} modalId={idModalDel} deleteTodo={deleteTodo} />
           </>
         )}
       </div>

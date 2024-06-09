@@ -4,6 +4,7 @@ import Todo3Items from "./Todo3Items";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { deleteChecked, updateAll } from "../../../../app/features/todoSlice";
+import { Todo3ModalDelAll } from "./Todo3ModalDel";
 
 const Todo3 = () => {
   const { todos } = useSelector((state) => state.todo);
@@ -11,6 +12,7 @@ const Todo3 = () => {
   const [checkedAll, setCheckedAll] = useState(null);
   const dispatch = useDispatch();
   const checkedLength = todos.filter((d) => d.checked).length;
+  const [openModalDelAll, setOpenModalDelAll] = useState(false);
 
   const deleteAllChecked = () => {
     dispatch(deleteChecked());
@@ -19,6 +21,7 @@ const Todo3 = () => {
     } else if (checkedLength === todos.length) {
       toast.success(`delete All data success`);
     }
+    setOpenModalDelAll(false);
     setCheckedAll(false);
   };
 
@@ -30,16 +33,23 @@ const Todo3 = () => {
   return (
     <div className="border rounded p-3">
       <Todo3Add />
+      <Todo3ModalDelAll
+        onClose={() => setOpenModalDelAll(false)}
+        openModalDel={openModalDelAll}
+        deleteAllChecked={deleteAllChecked}
+      />
       {todos.length > 0 ? (
         <>
           <div className="flex justify-between items-center">
             <div className="flex gap-2 items-center my-2 mb-3 text-sm">
-              <input type="checkbox" checked={checkedAll} onChange={checkedAllData} />
+              <input type="checkbox" checked={checkedLength === todos.length} onChange={checkedAllData} />
               <span>Checked All data</span>
             </div>
             {checkedLength > 0 && (
               <button
-                onClick={deleteAllChecked}
+                // onClick={deleteAllChecked}
+                type="button"
+                onClick={() => setOpenModalDelAll(true)}
                 className="delete border rounded p-2 leading-none bg-red-500 text-white hover:opacity-50 text-xs sm:text-sm"
               >
                 Delete All Checked

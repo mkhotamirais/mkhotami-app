@@ -5,10 +5,12 @@ import { FaCheck, FaPenToSquare, FaTrashCan, FaXmark } from "react-icons/fa6";
 import { deleteTodo, updateTodo } from "../../../../app/features/todoSlice";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { Todo3ModalDel } from "./Todo3ModalDel";
 
 const Todo3Items = ({ item, isEdit, setIsEdit }) => {
   const dispatch = useDispatch();
   const [newText, setNewText] = useState(item.text);
+  const [idModalDel, setIdModalDel] = useState(null);
 
   const onDelete = () => {
     dispatch(deleteTodo({ id: item.id }));
@@ -66,9 +68,13 @@ const Todo3Items = ({ item, isEdit, setIsEdit }) => {
             <button onClick={() => setIsEdit(item.id)} className="text-green-500 hover:opacity-70">
               <FaPenToSquare />
             </button>
-            <button onClick={onDelete} className="text-red-500 hover:opacity-70">
+            {/* <button onClick={onDelete} className="text-red-500 hover:opacity-70">
+              <FaTrashCan />
+            </button> */}
+            <button onClick={() => setIdModalDel(item.id)} className="text-red-500 hover:opacity-70">
               <FaTrashCan />
             </button>
+            <Todo3ModalDel item={item} modalId={idModalDel} onClose={() => setIdModalDel(null)} handleDelete={onDelete} />
           </>
         )}
       </div>

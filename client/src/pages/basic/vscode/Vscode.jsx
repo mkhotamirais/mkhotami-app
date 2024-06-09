@@ -1,7 +1,9 @@
+import { Title } from "../../../components/Components";
+
 const Vscode = () => {
   return (
     <div>
-      <div>vscode</div>
+      <Title left>vscode</Title>
       <ol className="list-inside list-decimal">
         <li>codesnap by adpyke https://codesnap.dev/</li>
         <li>vscode-pets by anthony shaw</li>

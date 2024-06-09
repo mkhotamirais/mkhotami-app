@@ -1,5 +1,7 @@
+import { Title } from "../../components/Components";
+
 const MernReferensi = () => {
-  return <div>MernReferensi</div>;
+  return <Title left>MernReferensi</Title>;
 };
 
 export default MernReferensi;

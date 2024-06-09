@@ -46,11 +46,12 @@ import {
 } from "react-icons/si";
 
 import { DiMaterializecss } from "react-icons/di";
+import { Title } from "../../components/Components";
 
 const Reference = () => {
   return (
     <div>
-      <div>Reference</div>
+      <Title left>Reference</Title>
       <div>Basic Website</div>
       <div className="flex justify-start flex-wrap gap-2">
         <SiHtml5 />

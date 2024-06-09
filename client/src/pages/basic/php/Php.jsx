@@ -1,7 +1,9 @@
+import { Title } from "../../../components/Components";
+
 const Php = () => {
   return (
     <div>
-      <div>php</div>
+      <Title left>php</Title>
       <ul className="list-inside list-disc">
         <li>Php adalah bahasa pemrograman khusus untuk web, open soruce, berjalan di server</li>
         <li>

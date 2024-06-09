@@ -1,9 +1,10 @@
+import { Title } from "../../../components/Components";
 import CssQuestions from "./CssQuestions";
 
 const Css = () => {
   return (
     <div>
-      <div>css</div>
+      <Title left>css</Title>
       <p>cascading stylesheet</p>
       <CssQuestions />
     </div>

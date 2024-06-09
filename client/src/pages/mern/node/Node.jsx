@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Bubble } from "../../../components/Components";
+import { Bubble, Title } from "../../../components/Components";
 const nodeModuleMenus = [
   { href: "nodeFs", text: "fs" },
   { href: "nodeHttp", text: "http" },
@@ -15,13 +15,13 @@ const nodeNpmMenus = [
 const Node = () => {
   return (
     <div>
-      <div className="flex gap-1 items-center">
+      <Title left>
         <div>Node</div>
         <Bubble menus={nodeModuleMenus} />
         <div>Module</div>
         <Bubble menus={nodeNpmMenus} />
         <div>Npm</div>
-      </div>
+      </Title>
       <Outlet />
     </div>
   );

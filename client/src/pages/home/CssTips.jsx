@@ -1,4 +1,4 @@
-import { Tabs } from "../../components/Components";
+import { Tabs, Title } from "../../components/Components";
 
 const cssTipsMenus = [
   { href: "../../css-tips/accordion.html", text: "accordion" },
@@ -15,7 +15,7 @@ const cssTipsMenus = [
 const CssTips = () => {
   return (
     <section>
-      <div>css tips</div>
+      <Title>css tips</Title>
       <Tabs menus={cssTipsMenus} />
     </section>
   );

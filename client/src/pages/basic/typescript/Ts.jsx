@@ -1,7 +1,9 @@
+import { Title } from "../../../components/Components";
+
 const Ts = () => {
   return (
     <div>
-      <div>ts</div>
+      <Title left>typescript</Title>
       <div>
         <h2 className="font-medium">pendahuluan</h2>
         <p>

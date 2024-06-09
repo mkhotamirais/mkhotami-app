@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { CardGrid, Err, Loading } from "../../../components/Components";
+import { CardGrid, Err, Loading, Title } from "../../../components/Components";
 import SiskoItems from "./SiskoItems";
 import { SiskoCartLink, SiskoSearch, SiskoSort } from "./SiskoQuery";
 import { useEffect } from "react";
@@ -22,7 +22,7 @@ const Sisko = () => {
 
   return (
     <div>
-      <div>Sistem toko</div>
+      <Title>Sistem toko</Title>
       <div
         className={`z-30 flex justify-between items-center gap-2 mb-2 sticky top-16 py-1 ${
           dark ? "bg-slate-800" : "bg-white"

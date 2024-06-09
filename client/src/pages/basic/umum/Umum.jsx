@@ -1,3 +1,5 @@
+import { Title } from "../../../components/Components";
+
 export default function Umum() {
-  return <div>Umum</div>;
+  return <Title left>Umum</Title>;
 }

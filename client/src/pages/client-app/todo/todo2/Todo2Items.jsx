@@ -4,10 +4,12 @@ import { FaCheck, FaTrashAlt } from "react-icons/fa";
 import { FaPenToSquare, FaXmark } from "react-icons/fa6";
 import { enqueueSnackbar } from "notistack";
 import moment from "moment";
+import { Todo2ModalDel } from "./Todo2ModalDel";
 
 const Todo2Items = ({ item, isEdit, setIsEdit }) => {
   const { dispatch } = useContext(TodoContext);
   const [newText, setNewText] = useState(item.text);
+  const [idModalDel, setIdModalDel] = useState(null);
 
   const handleDelete = (item) => {
     dispatch({ type: "deleted", item });
@@ -64,9 +66,15 @@ const Todo2Items = ({ item, isEdit, setIsEdit }) => {
             <button onClick={() => setIsEdit(item.id)} className="text-green-500 hover:opacity-70">
               <FaPenToSquare />
             </button>
-            <button onClick={() => handleDelete(item)} className="text-red-500 hover:opacity-70">
+            <button onClick={() => setIdModalDel(item.id)} className="text-red-500 hover:opacity-70">
               <FaTrashAlt />
             </button>
+            <Todo2ModalDel
+              item={item}
+              modalId={idModalDel}
+              onClose={() => setIdModalDel(null)}
+              handleDelete={handleDelete}
+            />
           </>
         )}
       </div>
