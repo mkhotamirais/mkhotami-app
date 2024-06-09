@@ -8,15 +8,14 @@ const JsAdvance = () => {
   return (
     <section>
       <h2>JsAdvance</h2>
+      <p>Key Words: Object, Property, Method, Class, Prototype</p>
+      <p>
+        Semua js valui kecuali primitives adalah objek, property = variabel dalam objek, method = fungsi dalam objek, class
+        cara lain penulisan objek tapi di belakang layar tetap objek. Tipe data apapun pasti objek artinya pasti punya
+        prototype. Array.prototype; Number.prototype; Object.prototype; Date.prototype; dll
+      </p>
+      <JsObject />
       <ul className="list-inside list-disc">
-        <li>
-          <b>Object</b> All javascript value except primitives are objects. primitives: string, number, boolean, null,
-          undefined, symbol, bigint. Property is variable inside object; Method is function inside object. <b>Class</b>{" "}
-          Syntaxnya Class, tapi di belakang layar, prototype yang terjadi. tipe data apapun pasti object artinya pasti punya
-          prototype. untuk membuktikannya ketik perintah berikut di console: Array.prototype; Number.prototype;
-          Object.prototype; Date.prototype; dll
-          <JsObject />
-        </li>
         <li>
           <b>Prototype</b> konsepnya mirip dengan Class
           <JsPrototype />

@@ -1,35 +1,32 @@
 const JsObject = () => {
   return (
-    <pre>{`
-// 1. Tiga cara membuat object: object literal, function declaration (object literal inside function), constructor function (using this)
-// 1. object literal
+    <pre className="text-sm">{`
+// 1. Object literal, Fn Declaration (object literal inside fn), Constructor Fn (using this, no arrow fn, not recommended to use class)
 const obj = {};
 obj.id = 1;
 obj.name = "object literal"
-const obj = { id: 1, name: "object literal" };
-obj12.name = "name changed";
-obj12.detail = "detail added";
+const obj2 = { id: 1, name: "object literal" };
+obj12.name = "change name";
+obj12.detail = "add detail";
 console.log(obj, obj.id, obj.name)
 
-// 2. function declaration
 const Fn = (id, name) => {
   const obj = { id: id, name: name };
   return obj;
 };
-const Person1 = Fn(1, "person1");
-const Person2 = Fn(2, "person1");
-console.log(Person1, Person2, Person1.id, Person1.name);
+const Fd1 = Fn(1, "function declaration 1");
+const Fd2 = Fn(2, "function declaration 2");
+console.log(Fd1, Fd2, Fd1.id, Fd1.name);
 
-// 3. Constructor Function, tidak bisa pakai arrow function, disarankan pakai Class.
 function Fn(id, name) {
-  //   let this = Object.create(Fn2.prototype)
+  //   let this = Object.create(Fn2.prototype) // implicitly
   this.id = id;
   this.name = name;
-  //   return this
+  //   return this // implicitly
 }
-const Siti = new Fn(1, "siti");
-const Ayu = new Fn(2, "ayu");
-console.log(Siti, Ayu, Siti.id, Siti.name);
+const Cf1 = new Fn(1, "constructor function 1");
+const Cf2 = new Fn(2, "constructor function 2");
+console.log(Cf1, Cf2, Cf1.id, Cf1.name);
 
 // 4. Object create
 const objA = { id: 1, name: "objectA" };

@@ -74,9 +74,17 @@ export default function JsQuestions() {
         <p className="mb-2">
           closure adalah kemampuan sebuah fungsi untuk mengakses variabel dari luar scope nya di mana fungsi tersebut
           dedeklarasikan bahkan setelah scope luar tersebut selesai dieksekusi, kondisinya biasanya saat terdapat fungsi yang
-          berisi fungsi lain (inner function / fungsi dalam) dan fungsi dalam tersebut mengakses fungsi variabel dari fungsi
-          luar. kata kuncinya (scope, inner function, akses variabel)
+          berisi fungsi lain (inner function / fungsi dalam) dan fungsi dalam tersebut mengakses variabel dari fungsi luar.
+          kata kuncinya (scope, inner function, akses variabel)
         </p>
+        <p className="mb-2">setTimeout itu sync atau async</p>
+        <p className="mb-2">HOF & penggunaannya</p>
+        <p className="mb-2">hoisting</p>
+        <p className="mb-2">callback</p>
+        <p className="mb-2">promise? jika catch promise tidak dijalankan maka?</p>
+        <p className="mb-2">concurrency & paralellism</p>
+        <p className="mb-2">bagaimana js yang notabene nya single-threaded menangani proses asynchronous</p>
+        <p className="mb-2">implementasi oberserver pattern dengan menampilkan input user dari feld input?</p>
       </div>
     </div>
   );
