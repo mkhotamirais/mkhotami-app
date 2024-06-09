@@ -11,13 +11,24 @@ const Todo2WithProvider = () => (
 );
 
 const todoMenus = [
-  { text: "todo1", description: "Todo with useState and useEffect, the data storaged in localstorage", content: <Todo1 /> },
+  {
+    text: "todo1",
+    description:
+      "The first todo list app only uses the useState and useEffect hooks and relies solely on props for data transmission between parent and child components, and the notifications are implemented manually.",
+    content: <Todo1 />,
+  },
   {
     text: "todo2",
-    description: "Todo with useState, useEffect, useReducer, useContext, the data storaged in localStorage",
+    description:
+      "The second todo list app uses the useState, useEffect, useContext, and useReducer hooks for data management and state management, and the notifications are implemented using the Notistack library.",
     content: <Todo2WithProvider />,
   },
-  { text: "todo3", description: "Todo with redux, the data storaged in localStoga", content: <Todo3 /> },
+  {
+    text: "todo3",
+    description:
+      "he third to-do list project uses the Redux library for state management, allowing for centralized data and easier access to each state, and the notifications are implemented using the react-hot-toast library",
+    content: <Todo3 />,
+  },
 ];
 
 const Todo = () => {
@@ -26,6 +37,10 @@ const Todo = () => {
   return (
     <div>
       <Title>Todo</Title>
+      <p className="text-center mb-5">
+        Here are three todo list projects with the same functionality, but built using different tools. All of them run on
+        the client side and store data in local storage.
+      </p>
       <div className="flex gap-3 justify-center mb-3">
         {todoMenus.map((item, i) => (
           <button
