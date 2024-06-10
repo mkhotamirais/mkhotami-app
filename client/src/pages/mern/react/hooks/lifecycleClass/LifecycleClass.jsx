@@ -62,7 +62,7 @@ class LifecycleClass extends React.Component {
   render() {
     console.log("RENDER");
     return (
-      <>
+      <div className="border rounded p-2 my-1">
         <div>lifecycle class</div>
         <p>Untuk melihat siklusnya lihat di console</p>
         {this.state.view ? <Title name={this.state.name} count={this.state.count} /> : null}
@@ -78,7 +78,7 @@ class LifecycleClass extends React.Component {
           count
         </button>
         <br />
-      </>
+      </div>
     );
   }
 }

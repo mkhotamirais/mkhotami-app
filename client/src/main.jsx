@@ -47,7 +47,6 @@ import ReactRingkasan from "./pages/mern/react/ReactRingkasan.jsx";
 import { UseState } from "./pages/mern/react/hooks/useState/UseState.jsx";
 import { UseEffect } from "./pages/mern/react/hooks/useEffect/UseEffect.jsx";
 import { UseCallback } from "./pages/mern/react/hooks/useCallback/UseCallback.jsx";
-import LifecycleClass from "./pages/mern/react/hooks/lifecycleClass/LifecycleClass.jsx";
 import { CustomHook } from "./pages/mern/react/hooks/customHook/CustomHook.jsx";
 import UseReducer from "./pages/mern/react/hooks/useReducer/UseReducer.jsx";
 import UseContext from "./pages/mern/react/hooks/useContext/UseContext.jsx";
@@ -94,6 +93,7 @@ import CourseTechnical from "./pages/basic/course/CourseTechnical.jsx";
 import Umum from "./pages/basic/umum/Umum.jsx";
 import ReactQuestions from "./pages/mern/react/react-questions/ReactQuestions.jsx";
 import JsQuestions from "./pages/basic/javascript/jsQuestions/JsQuestions.jsx";
+import Kelas from "./pages/mern/react/hooks/lifecycleClass/Kelas.jsx";
 
 store.dispatch(getUsers());
 store.dispatch(getPosts());
@@ -157,7 +157,7 @@ const router = createBrowserRouter(
           <Route path="usecontext" element={<UseContext />} />
           <Route path="usereducer" element={<UseReducer />} />
           <Route path="custom-hook" element={<CustomHook />} />
-          <Route path="lifecycle-class" element={<LifecycleClass />} />
+          <Route path="class" element={<Kelas />} />
         </Route>
         <Route path="mongodb" element={<Mdb />} />
         <Route path="mysql" element={<Mys />} />

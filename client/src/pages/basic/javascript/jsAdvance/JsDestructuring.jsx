@@ -8,6 +8,10 @@ const str = "ahmad";
 console.log(arr, ...arr);
 console.log(str, ...str);
 
+  const objA = { nama: "ahmad", umur: 21 };
+// ({ nama, umur } = { nama: "ahmad", umur: 25 }); // anonimous object by destructuring;
+
+
 ((...val) => console.log(val))(arr);
 ((...val) => console.log(val))(["a", "b", "c"]);
 ((...val) => console.log(val))(...arr);

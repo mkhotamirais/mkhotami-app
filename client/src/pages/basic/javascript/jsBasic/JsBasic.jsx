@@ -4,9 +4,14 @@ const JsBasic = () => {
       <h2>JsBasic</h2>
       <p>
         Key Words: data types, variable, let, const, var, falsy, truthy, computer language, human lang, programming lang,
-        unicode, excape character, regex, compiler, interpreter
+        unicode, excape character, regex, compiler, interpreter, functions, hof, callback, scope, closure, this.
+      </p>
+      <p>
+        functions adalah blok kode yang dirancang untuk melakukan tugas tertentu, dan dapat dipanggil untuk dieksekusi kapan
+        saja selama masa hidup program.
       </p>
       <pre className="text-sm">{`
+// TIPE DATA
 // tipe data primitif
 let num = 10; // number
 let str = "a"; // string
@@ -21,7 +26,7 @@ let fn = function () {console.log("halo");}; // function
 console.log(typeof num, "dst")
 
 
-// falsy & truthy
+// FALSY & TRUTHY
 falsy: false 0 -0 (nol negatif) 0n (bigint nol) "" '' null undefined NaN
       bigint not adalah bilangan bulat besar yang melebihi batas angka yang dapat diwakili tipe data Number
       nol negatif dalam operasi aritmatika 1/0 hasilnya infinity, tapi 1/-0 hasilnya -infinity artinya pelakuakn 0 dan -0 berbeda.
@@ -29,18 +34,14 @@ falsy: false 0 -0 (nol negatif) 0n (bigint nol) "" '' null undefined NaN
 10 ? console.log(true) : console.log(false) // true
 
 
-// looping (for, while, do while, break, continue, switch case, for of, for in)
+// LOOPING (for, while, do while, break, continue, switch case, for of, for in)
 for (let i = 0; i < 3; i++) console.log(i); // 0,1,2
-
 let i = 0;
 while (i < 3) { console.log(i); i++ } // 0,1,2 // jika i = 5 maka tidak ada output
-
 let j = 0;
 do { console.log(j); j++ } while (j < 3); // 0,1,2 // jika j = 5 maka outputnya 5
-
 for (let i = 0; i < 5; i++) { if (i > 3) break; console.log(i) } // 0,1,2,3
 for (let i = 0; i < 5; i++) { if (i % 2) continue; console.log(i) } // 0,2,4
-
 const n = 4;
 switch (n) {
   case 1: case 2: case 3: console.log("sangat kurang"); break;
@@ -48,7 +49,6 @@ switch (n) {
   case 5: console.log("betul"); break;
   default: console.log("salah atau bukan angka");
 } // sedikit lagi // jika n = 1 | 2 | 3 maka "sangat kurang" jikan n = 5 maka "betul" selain itu "salah atau bukan angka"
-
 const str = "aku";
 const arr = ["a", "b", "c"];
 const obj = { name: "ahmad", age: 10 };
@@ -59,7 +59,7 @@ for (let i in arr) console.log(i, arr[i]); // 0 a, 1 b, 2 c
 for (let i in obj) console.log(i, obj[i]); // name ahmad, age 10
 
 
-// Number
+// NUMBER & MATH
 1. basis 2-10 (binary, hexadecimal, octal, bigint)
 2. Number.EPSILON .MAX_VALUE .MIN_VALUE .MAX_SAFE_INTEGER .MIN_SAFE_INTEGER .POSITIVE_INFINITY .NEGATIVE_INFIITY
 3. Number.isFinite(val) .isInteger(val) .isNaN(val) .isSaveInteger(val)
@@ -67,9 +67,6 @@ for (let i in obj) console.log(i, obj[i]); // name ahmad, age 10
 5. Number.prototype.name=val
 6. num.toExponential(int=0) .toFixed(x=0) .toPrecision(x=0) .valueOf() .toString(radix=0)
 console.log(Number.isFinite(0));
-
-
-// Math
 1. Math.abs(-num) .cbrt(num**3) .sqrt(num**2) .ceil(float) .floor(float) .round(num) .sign(num),
 2. Math.max(num1,num2,num-n) .min(num1,num-n) .pow(base,exponent)\n3.3 Math.round(float) .trunc(num|-num) .sign(num|-num|0),
 3. Math.max.apply(null, [arr]),
@@ -77,7 +74,7 @@ console.log(Number.isFinite(0));
 5. Math.random()
 
 
-// String
+// STRING
 const str = "hello world";
 const strTrim = "   hello world   "
 let res;
@@ -125,7 +122,7 @@ res = str.split(" "); // ['hello', 'world'] // .split(separator, limit = lengt m
 res = str.match(/l/g); // ['l', 'l', 'l'] // .match(searchVal = str|regex)
 
 
-// Array
+// ARRAY
 const arrInherit = ["a", "b", ["aa", "bb", ["aaa", "bbb"]]];
 const arr = ["a", "b", "c"];
 let res;
@@ -177,11 +174,81 @@ arrSortStr.sort(); // ["a", "aa", "b", "bc", "c"];
 arrSortStr.reverse(); // [ 'c', 'bc', 'b', 'aa', 'a' ]
 // .sort menerima parameter sebagai fungsi pembanding, .reverse tidak menerima parameter
 console.log(arrSortNum1, arrSortNum2, arrSortStr);
-6. map, filter, reduce
+
+
+// MAP, FILTER, REDUCE
 const names = ["ahmad", "abdul", "siti"];
 names.map((item, i) => console.log(i + 1, item));
 const namesFilter = names.filter((item, i) => item.includes("a"));
 console.log(namesFilter);
+
+
+// FUNCTION(Fn)
+1. function declaration
+function Fn() { return "function declaration" }
+function Fn(param) { return "hello " + param }
+function Fn(param1, param2 = "john") { return "Hello " + param1 + " and default param " + param2 }
+console.log(Fn(), Fn('brendan'))
+2. function expression (anonimouse function)
+const Fn = function () { return "function expression" }
+const Fn = function (param1, param2 = "john") { return "hello " + param1 + " and default param " + param2 }
+console.log(Fn(), Fn('brendan'));
+3. arrow
+const Fn = () => { return "arrow function" };
+const Fn = () => "arrow function" // fungsi ini sama seperti yang atas karena hanya "return"
+const Fn = (param1, param2 = "abdul") => { return "hello " + param1 + " and default param " + param2 }
+// jika tidak hanya return maka {} dan 'return' tidak bisa dihilangkan;
+console.log(Fn(), Fn("brendan"));
+4. self invoking fn (fungsi yang menjalankan diri)
+(function Fn4() { console.log("self invoking fn declaration")})();
+(function () { console.log("self invoking fn expression/anonimous")})();
+(() => console.log("self invoking arrow fn"))();
+5. recursive fn (fungsi di dalam fungsi)
+function Fn5() {
+  const name = 'john'
+  function Fn5a() { return "halo " + name }
+  return Fn5a();
+}
+console.log(Fn5());
+
+
+// HOF (higher order function) and CALLBACK
+HOF adalah fungsi yang menerima fungsi sebagai argumen atau mengembalikan fungsi sebagai hasil;
+CALLBACK adalah fungsi yang menjadi argumen dari fungsi lain lalu dieksekusi di fungsi tersebut.
+function myHof(cb){ return cb() }
+function myHof = (cb) => cb()
+function myCb(){ console.log("hello world")}
+myHof(myCb) // hello world
+myHof(function myCb(){ console.log("hello world 2")}) // hello world 2
+myHof(() => console.log("hello world 3)) // hello world 3
+((cb) => cb())(() => console.log("halo world 4")); // hello world 4
+
+
+// CLOSURE
+// CLOSURE adalah kemampuan sebuah fungsi untuk mengakses variabel dari luar scope nya di mana fungsi tersebut dedeklarasikan bahkan setelah scope luar tersebut selesai dieksekusi
+function outerFn(){
+  const name = 'john';
+  function innerFn(){
+    return name;
+  }
+  innerFn()
+}
+outerFn()
+const Fn1 = () => {
+        let name = "ahmad";
+        const fungsi261 = () => name;
+        console.dir(fungsi261);
+      };
+      Fn1();
+      const Fn2 = () => {
+        let name = "ahmad";
+        console.dir(() => name);
+      };
+      Fn2();
+      (() => {
+        let outer = "ahmad";
+        console.dir(() => outer);
+      })();
       `}</pre>
     </article>
   );
