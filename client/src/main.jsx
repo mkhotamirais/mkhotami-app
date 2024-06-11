@@ -29,11 +29,6 @@ import Vcs from "./pages/basic/vcs/Vcs.jsx";
 import Reference from "./pages/home/Reference.jsx";
 import SimpleWebpage from "./pages/home/SimpleWebpage.jsx";
 import CssTips from "./pages/home/CssTips.jsx";
-import JsBasic from "./pages/basic/javascript/jsBasic/JsBasic.jsx";
-import JsAdvance from "./pages/basic/javascript/jsAdvance/JsAdvance.jsx";
-import JsFunctions from "./pages/basic/javascript/jsFunctions/JsFunctions.jsx";
-import JsCases from "./pages/basic/javascript/jsCases/JsCases.jsx";
-import JsModule from "./pages/basic/javascript/jsModule/JsModule.jsx";
 import Welcome from "./Welcome.jsx";
 import NodeFs from "./pages/mern/node/nodemodules/NodeFs.jsx";
 import NodeHttp from "./pages/mern/node/nodemodules/NodeHttp.jsx";
@@ -92,7 +87,6 @@ import TryNewComponent from "./pages/home/reactComponents/TryNewComponent.jsx";
 import CourseTechnical from "./pages/basic/course/CourseTechnical.jsx";
 import Umum from "./pages/basic/umum/Umum.jsx";
 import ReactQuestions from "./pages/mern/react/react-questions/ReactQuestions.jsx";
-import JsQuestions from "./pages/basic/javascript/jsQuestions/JsQuestions.jsx";
 import Kelas from "./pages/mern/react/hooks/lifecycleClass/Kelas.jsx";
 
 store.dispatch(getUsers());
@@ -121,16 +115,7 @@ const router = createBrowserRouter(
         <Route path="umum" element={<Umum />} />
         <Route path="html" element={<Html />} />
         <Route path="css" element={<Css />} />
-        <Route path="javascript" element={<Javascript />}>
-          <Route index element={<JsBasic />} />
-          <Route path="jsbasic" element={<JsBasic />} />
-          <Route path="jsquestions" element={<JsQuestions />} />
-          <Route path="jsadvance" element={<JsAdvance />} />
-          <Route path="jsfunction" element={<JsFunctions />} />
-          <Route path="jscases" element={<JsCases />} />
-          <Route path="jsModule" element={<JsModule />} />
-          <Route path="jsClses" element={<JsCases />} />
-        </Route>
+        <Route path="javascript" element={<Javascript />} />
         <Route path="php" element={<Php />} />
         <Route path="vcs" element={<Vcs />} />
         <Route path="vscode" element={<Vscode />} />
